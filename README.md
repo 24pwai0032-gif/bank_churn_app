@@ -2,7 +2,6 @@
 
 > MLOps Assignment 02 — FastAPI + Streamlit + RandomForest
 
----
 
 ## 📁 Project Structure
 
@@ -25,7 +24,6 @@ bank_churn_app/
     └── requirements.txt
 ```
 
----
 
 ## ⚙️ Setup & Run Order
 
@@ -53,7 +51,6 @@ streamlit run app.py
 ```
 UI → http://localhost:8501
 
----
 
 ## 📬 Example Input & Output
 
@@ -71,3 +68,6 @@ Output:
 ```json
 { "prediction": 1, "churn_probability": 0.64, "result": "Churn" }
 ```
+=======
+# bank_churn_app
+>>>>>>> 3d068d46609579e49e8d97b09f8fa824e824f680
