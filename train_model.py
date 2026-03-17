@@ -14,6 +14,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import warnings
 warnings.filterwarnings("ignore")
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # ─────────────────────────────────────────────
 # 1. LOAD DATA
@@ -75,7 +77,17 @@ model_pipeline.fit(X_train, y_train)
 y_pred = model_pipeline.predict(X_test)
 print("\n✅ Accuracy:", round(accuracy_score(y_test, y_pred) * 100, 2), "%")
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
-print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+cm = confusion_matrix(y_test, y_pred)
+print("Confusion Matrix:\n", cm)
+
+# Plot confusion matrix
+plt.figure(figsize=(6,4))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['No Churn', 'Churn'], yticklabels=['No Churn', 'Churn'])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix')
+plt.tight_layout()
+plt.show()
 
 # ─────────────────────────────────────────────
 # 7. SAVE MODEL
